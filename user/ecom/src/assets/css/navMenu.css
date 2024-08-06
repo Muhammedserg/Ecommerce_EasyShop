@@ -1,0 +1,166 @@
+/* Stile für die Seitenleiste */
+.sideNavOpen {
+    height: 100%;
+    width: 260px;
+    margin-top: 55px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    overflow-x: hidden;
+    font-size: 16px;
+    padding-top: 40px;
+    transition: 0.5s;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px 0 rgba(57, 78, 234, 0.1);
+}
+
+.sideNavClose {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    top: 0;
+    font-size: 20px;
+    left: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    transition: .5s;
+    background-color: #161616;
+    box-shadow: 0 0 8px 0 rgba(57, 78, 234, 0.1);
+}
+
+/* Stile für die Inhaltsüberlagerung */
+.ContentOverlayOpen {
+    display: block;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.ContentOverlayClose {
+    display: none;
+}
+
+/* Allgemeine Stile für die Navigation */
+.nav-logo {
+    height: 40px;
+    margin-right: 15px;
+}
+
+.nav-right-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+/* Stile für die Suchleiste */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar .form-control {
+    width: calc(100% - 40px); /* adjust according to the width of the search button */
+    border-radius: 0;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    margin-left: -40px; /* overlap with the form control to make it look like a single element */
+}
+
+.search-btn:hover {
+    color: #dbdbdb;
+}
+
+/* Stile für die Icons */
+.nav-right-icons .btn i {
+    color: #333;
+    font-size: 24px;
+}
+
+.nav-right-icons .btn .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px 7px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.nav-right-icons .cart-btn {
+    position: relative;
+    padding: 0;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-right-icons .cart-btn i {
+    margin-right: 5px;
+}
+
+.nav-right-icons .btn-text {
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.nav-right-icons .btn-text:hover {
+    color: #001536;
+}
+
+/* Stile für die Logout-Schaltfläche */
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Basis-Stile hier ... */
+
+/* Media Queries für mobile Geräte */
+@media (max-width: 767px) {
+    /* Anpassung der Seitenleiste für mobile Geräte */
+    .sideNavOpen {
+        width: 80%; /* Seitennavigation auf 80% Breite setzen */
+        margin-top: 45px; /* Margin-Top entfernen */
+        padding-top: 10px; /* Padding-Top reduzieren */
+    }
+
+    .nav-right-icons .btn-text {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .nav-right-icons .logout-btn {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+}

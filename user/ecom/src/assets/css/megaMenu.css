@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    width: 250px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropbtn {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropbtn.active {
+    background-color: #2980b9;
+}
+
+.accordionMenuIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    max-height: 200px;
+}
+
+.subcategory-item {
+    padding: 10px;
+    background-color: #eef2f7;
+    border-bottom: 1px solid #ddd;
+}
+
+.subcategory-item:last-child {
+    border-bottom: none;
+}
+
+.subcategory-link {
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+}
+
+.subcategory-link:hover {
+    background-color: #d3e0ea;
+    color: #2980b9;
+    padding-left: 10px;
+    transition: padding-left 0.3s ease;
+}
+
+.no-subcategories {
+    color: #999;
+    font-style: italic;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
