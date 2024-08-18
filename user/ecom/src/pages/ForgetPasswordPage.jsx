@@ -1,22 +1,20 @@
-import React, { Component, Fragment } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import Footer from '../components/Common/Footer';
 import NavMenu from '../components/Common/NaveMenu';  
 import ForgetPassword from '../components/Common/ForgetPassword';
 
-class ForgetPasswordPage extends Component {
-    componentDidMount() {
+const ForgetPasswordPage = () => {
+    useEffect(() => {
         window.scrollTo(0, 0);
-    }
+    }, []);
 
-    render() {
-        return (
-            <Fragment>
-                <NavMenu />
-                <ForgetPassword />
-                <Footer />
-            </Fragment>
-        );
-    }
+    return (
+        <Fragment>
+            <NavMenu />
+            <ForgetPassword />
+            <Footer />
+        </Fragment>
+    );
 }
 
 export default ForgetPasswordPage;

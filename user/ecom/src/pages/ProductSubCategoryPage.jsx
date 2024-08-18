@@ -7,19 +7,21 @@ import NavMenu from '../components/Common/NaveMenu';
 import SubCategory from '../components/ProductDetails/SubCategory';
 
 function ProductSubCategoryPage() {
+    // Extract category and subcategory from URL parameters
     const { category, subcategory } = useParams();
     const [productData, setProductData] = useState([]);
 
+    // Fetch product data when category or subcategory changes
     useEffect(() => {
-        window.scroll(0, 0);
+        window.scrollTo(0, 0); // Scroll to top of the page
         axios.get(AppURL.ProductListBySubCategory(category, subcategory))
             .then(response => {
-                setProductData(response.data);
+                setProductData(response.data); // Update state with fetched data
             })
             .catch(error => {
                 console.error("There was an error fetching the product data!", error);
             });
-    }, [category, subcategory]);
+    }, [category, subcategory]); // Dependencies array
 
     return (
         <React.Fragment>

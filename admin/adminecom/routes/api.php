@@ -11,6 +11,7 @@ use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\Resetcontroller;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\FavouriteCotroller;
 
 use App\Http\Controllers\Admin\ProductCartController;
 
@@ -63,7 +64,9 @@ Route::get('/ProductListbycategory/{category}', [ProductListController::class, '
 Route::get('/ProductListbysubcategory/{category}/{subcategory}', [ProductListController::class, 'ProductListBySubCategory']);
 
 // ProductDetails route 
-Route::get('/productdetails/{id}', [ProductDetailsController::class, 'ProductDetails']);
+Route::get('/productdetails/{product_code}', [ProductDetailsController::class, 'ProductDetails']);
 
 // Product Cart Route
 Route::post('/addtocart', [ProductCartController::class, 'addToCart']);
+// Favourite Route
+Route::get('/favourite/{product_code}/{email}',[FavouriteController::class, 'AddFavourite']);

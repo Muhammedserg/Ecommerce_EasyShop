@@ -20,7 +20,7 @@ class ProductCartController extends Controller
                 'size' => 'required|string',
                 'color' => 'required|string',
                 'quantity' => 'required|integer|min:1',
-                'id' => 'required|integer|exists:product_lists,id', 
+                'product_code' => 'required|string|exists:product_lists,product_code',
             ]);
 
             Log::info('Validation passed.');
@@ -29,14 +29,14 @@ class ProductCartController extends Controller
             $size = $request->input('size');
             $color = $request->input('color');
             $quantity = $request->input('quantity');
-            $productId = $request->input('id'); 
+            $productCode = $request->input('product_code');
 
             try {
                 // Fetch product details
-                $productDetails = ProductList::findOrFail($productId);
+                $productDetails = ProductList::where('product_code', $productCode)->firstOrFail();
                 Log::info('Product details fetched.', ['productDetails' => $productDetails]);
             } catch (ModelNotFoundException $e) {
-                Log::error('Product not found: ' . $productId);
+                Log::error('Product not found: ' . $productCode);
                 return response()->json(['error' => 'Product not found'], 404);
             }
 
@@ -58,7 +58,7 @@ class ProductCartController extends Controller
                 'email' => $email,
                 'image' => $productDetails->image,
                 'product_name' => $productDetails->title,
-                'product_code' => $productDetails->product_code,
+                'product_code' => $productCode,
                 'size' => $size,
                 'color' => $color,
                 'quantity' => $quantity,

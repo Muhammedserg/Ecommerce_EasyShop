@@ -15,7 +15,7 @@ export class ResetPassword extends Component {
       password: '',
       password_confirmation: '',
       errors: {},
-      loading: false // Added loading state
+      loading: false 
     };
   }
 
@@ -44,7 +44,7 @@ export class ResetPassword extends Component {
       return;
     }
 
-    this.setState({ loading: true }); // Set loading state to true when form is submitted
+    this.setState({ loading: true }); 
 
     const { token, email, password, password_confirmation } = this.state;
     const data = { token, email, password, password_confirmation };
@@ -54,7 +54,7 @@ export class ResetPassword extends Component {
         toast.success(response.data.message, {
           position: "top-right"
         });
-        this.setState({ message: response.data.message, loading: false }); // Set loading state to false after successful submission
+        this.setState({ message: response.data.message, loading: false }); 
         document.getElementById("formReset").reset();
       })
       .catch(error => {
@@ -62,7 +62,7 @@ export class ResetPassword extends Component {
           ? error.response.data.message 
           : 'An error occurred. Please try again later.';
         
-        this.setState({ message: errorMessage, loading: false }); // Set loading state to false after error
+        this.setState({ message: errorMessage, loading: false }); 
         toast.error(errorMessage, {
           position: "top-right"
         });
@@ -74,7 +74,7 @@ export class ResetPassword extends Component {
   }
 
   render() {
-    const { errors, loading } = this.state; // Destructure loading from state
+    const { errors, loading } = this.state; 
 
     return (
       <Fragment>

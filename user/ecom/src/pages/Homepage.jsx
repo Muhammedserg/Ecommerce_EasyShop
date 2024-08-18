@@ -6,7 +6,7 @@ import Categories from '../components/home/Categories';
 import Collection from '../components/home/Collection';
 import NewArrival from '../components/home/NewArrival';
 import NaveMenu from '../components/Common/NaveMenu';
-import HomeTopMobile from '../components/home/HomeTopMobile';
+import HomeTop from '../components/home/HomeTop';
 import AppURL from '../api/AppURL';
 
 const HomePage = () => {
@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <NaveMenu />
-      <HomeTopMobile />
+      <HomeTop />
       <FeaturedProducts />
       <NewArrival />
       <Categories />
